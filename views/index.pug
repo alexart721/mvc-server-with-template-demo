@@ -1,0 +1,24 @@
+html
+  head
+    title= title
+    style
+      include ./style.css
+  body.home
+    nav
+      h1 ThoughtStack
+      input.add(
+        type='text'
+        name='add'
+        placeholder='Add thought...'
+      )
+    div#thoughts
+      if thoughts.length
+        each thought in thoughts
+          p.thought= thought.text
+      else
+        p No thoughts added yet! Add one above.
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js')
+    script
+      include ./script.js
+
+
